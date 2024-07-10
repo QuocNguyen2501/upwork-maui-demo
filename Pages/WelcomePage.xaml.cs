@@ -36,5 +36,11 @@ public partial class WelcomePage : ContentPage
                 ShortDescription = "Chat, share files, and share progress."
             }
         };
-    }   
+    }
+
+
+    async void LoginBtn_Clicked(System.Object sender, System.EventArgs e)
+    {
+        await Navigation.PushAsync(new LoginPage());
+    }
 }

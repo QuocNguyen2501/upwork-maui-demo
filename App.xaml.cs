@@ -8,7 +8,7 @@ namespace UpworkDemo
         {
             InitializeComponent();
 
-            MainPage = new WelcomePage();
+            MainPage = new LoginPage();
         }
     }
 }
