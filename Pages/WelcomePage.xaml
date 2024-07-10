@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UpworkDemo.Pages.WelcomePage"
+             Shell.BackgroundColor="White"
+             Title="WelcomePage">
+    <Grid RowDefinitions=".2*,.6*,.2*">
+        <Image  Grid.Row="0"
+            HorizontalOptions="Center" 
+            Aspect="AspectFill"
+            HeightRequest="50"
+            WidthRequest="200"
+            Source="logo.png" 
+            />
+        <Grid Grid.Row="1">
+            <VerticalStackLayout>
+                <CarouselView HeightRequest="350" VerticalOptions="Center" HorizontalOptions="Center" x:Name="bannerCarousel" IndicatorView="bannerIndicator">
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <VerticalStackLayout>
+                                <Image
+                                    WidthRequest="250"
+                                    Source="{Binding ImagePath}" Aspect="AspectFill"/>
+                                <VerticalStackLayout HeightRequest="150">
+                                    <Label
+                                        FontAttributes="Bold"
+                                        FontSize="25"
+                                        WidthRequest="250"
+                                        HorizontalOptions="Center"
+                                        HorizontalTextAlignment="Center"
+                                        Text="{Binding Title}"/>
+                                    <Label 
+                                        Margin="0,10,0,0"
+                                        HorizontalOptions="Center" 
+                                        HorizontalTextAlignment="Center"
+                                        WidthRequest="300"
+                                        Text="{Binding ShortDescription}"/>
+                                </VerticalStackLayout>
+                            </VerticalStackLayout>
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
+                <IndicatorView Margin="0,100,0,0" IndicatorColor="Gray" SelectedIndicatorColor="Green" HorizontalOptions="Center" x:Name="bannerIndicator"></IndicatorView>
+            </VerticalStackLayout>
+        </Grid>
+        <Grid 
+            VerticalOptions="Center"
+            Grid.Row="2">
+            <VerticalStackLayout>
+                <Button WidthRequest="350" 
+                        HeightRequest="50" 
+                        BackgroundColor="Green"
+                        CornerRadius="50" 
+                        FontAttributes="Bold"
+                        Text="Log In"></Button>
+                <Label 
+                    HorizontalOptions="Center" 
+                    FontAttributes="Bold"
+                    TextColor="Green"
+                    Margin="0,20,0,0"
+                    Text="New to Upwork? Sign Up"/>
+            </VerticalStackLayout>
+        </Grid>
+    </Grid>
+</ContentPage>
