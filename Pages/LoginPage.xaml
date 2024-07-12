@@ -2,8 +2,9 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="UpworkDemo.Pages.LoginPage"
+             Shell.NavBarIsVisible="False"
              Title="Login Page">
-    <Grid RowDefinitions=".2*,.6*,.2*">
+    <Grid RowDefinitions=".2*,.8*">
         <Image  Grid.Row="0"
             HorizontalOptions="Center" 
             Aspect="AspectFill"
@@ -11,6 +12,126 @@
             WidthRequest="200"
             Source="logo.png" 
             />
+        <Grid Grid.Row="1" x:Name="passwordForm" IsVisible="False">
+            <VerticalStackLayout >
+                <Label 
+                FontSize="Large"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                Margin="0,0,0,10"
+                Text="Welcome"/>
 
+                        <Border Margin="10" HeightRequest="40" StrokeShape="RoundRectangle 10,10,10,10">
+                            <Grid ColumnDefinitions=".1*,.8*,.1*">
+                                <Image Grid.Column="0" Source="padlock.png" WidthRequest="13" Margin="15,0,15,5" />
+                                <Entry 
+                        Grid.Column="1"
+                        x:Name="password"
+                        BackgroundColor="White"
+                        IsPassword="True"
+                        Placeholder="Password" />
+                                <Image Grid.Column="2" Source="facefingerrecognization.png" WidthRequest="24"/>
+                            </Grid>
+                        </Border>
+                <Button 
+                x:Name="btnLogin"
+                Margin="10"
+                BackgroundColor="Green" 
+                FontAttributes="Bold" 
+                Clicked="btnLogin_Clicked"
+                Text="Log in"/>
+            </VerticalStackLayout>
+        </Grid>
+        <Grid Grid.Row="1" x:Name="usernameForm" IsVisible="True">
+            <VerticalStackLayout>
+                <VerticalStackLayout>
+                    <Label 
+                        FontSize="Large"
+                        FontAttributes="Bold"
+                        HorizontalOptions="Center"
+                        Margin="0,0,0,10"
+                        Text="Log in to Upwork"/>
+
+                    <Border Margin="10" HeightRequest="40" StrokeShape="RoundRectangle 10,10,10,10">
+                        <HorizontalStackLayout>
+                            <Image WidthRequest="14" Source="user.png" Margin="15,0,15,5" />
+                            <Entry 
+                                    x:Name="username"
+                                    BackgroundColor="White"
+                                    Placeholder="Username or Email" />
+                        </HorizontalStackLayout>
+                    </Border>
+                    <Button 
+                        x:Name="btnContinue"
+                        Margin="10"
+                        BackgroundColor="Green" 
+                        FontAttributes="Bold" 
+                        Clicked="btnContinue_Clicked"
+                        Text="Continue"/>
+                </VerticalStackLayout>
+                
+                <HorizontalStackLayout IsVisible="True" Margin="0,30,0,10">
+                    <Line 
+                        X1="0" Y1="0" X2="175" Y2="0" 
+                        Stroke="Gray" 
+                        Margin="10,0,10,0"></Line>
+                    <Label 
+                        Margin="0,-10,10,10" Text="or"></Label>
+                    <Line 
+                        X1="0" Y1="0" X2="175" Y2="0" 
+                        Stroke="Gray" ></Line>
+                </HorizontalStackLayout>
+                <Border 
+                    Margin="10" 
+                    StrokeShape="RoundRectangle 7,7,7,7"
+                    BackgroundColor="#4286F5"
+                    >
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="1"  />
+                    </Border.GestureRecognizers>
+                    <HorizontalStackLayout
+                        Spacing="10">
+                        <Border 
+                            StrokeShape="RoundRectangle 10,10,10,10"
+                            Margin="0,0,70,0" 
+                            BackgroundColor="White">
+                            <Image 
+                                Source="google48.png" 
+                                HeightRequest="40" 
+                                HorizontalOptions="Start"
+                                />
+                        </Border>
+                        <Label 
+                            VerticalOptions="Center"
+                            FontAttributes="Bold"
+                            TextColor="White"
+                            Text="Continue with Google"/>
+                    </HorizontalStackLayout>
+                </Border>
+                <Border 
+                    Margin="10" 
+                    StrokeShape="RoundRectangle 7,7,7,7"
+                    Stroke="Black">
+                    <Button 
+                        ImageSource="apple.png"
+                        TextColor="Black"
+                        BackgroundColor="White"
+                        FontAttributes="Bold" 
+                        Text="Continue with Apple"/>
+                </Border>
+
+                
+            </VerticalStackLayout>
+            <VerticalStackLayout Margin="0,0,0,20" VerticalOptions="End">
+                <Label 
+                    FontSize="11"
+                    HorizontalOptions="Center" 
+                    Text="Upwork uses cookies for nanalytics, personalized content and ads." />
+                                    <Label 
+                    FontSize="11"
+                    HorizontalOptions="Center" 
+                    Text="By using Upwork's services, you agree to this use of cookies." />
+            </VerticalStackLayout>
+        </Grid>
     </Grid>
 </ContentPage>
