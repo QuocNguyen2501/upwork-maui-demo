@@ -6,6 +6,7 @@ namespace UpworkDemo.Pages;
 public partial class WelcomePage : ContentPage
 {
 	public ObservableCollection<Banner> Banners { get; set; }
+
 	public WelcomePage()
 	{
 		InitializeComponent();

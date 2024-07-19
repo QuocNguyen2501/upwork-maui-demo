@@ -14,6 +14,7 @@ public partial class LoginPage : ContentPage
 		{
             usernameForm.IsVisible = false;
             passwordForm.IsVisible = true;
+            userDisplay.Text = _username;
         }
     }
 

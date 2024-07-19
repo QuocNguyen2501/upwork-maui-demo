@@ -18,28 +18,39 @@
                 FontSize="Large"
                 FontAttributes="Bold"
                 HorizontalOptions="Center"
-                Margin="0,0,0,10"
+                Margin="0,0,0,30"
                 Text="Welcome"/>
-
-                        <Border Margin="10" HeightRequest="40" StrokeShape="RoundRectangle 10,10,10,10">
-                            <Grid ColumnDefinitions=".1*,.8*,.1*">
-                                <Image Grid.Column="0" Source="padlock.png" WidthRequest="13" Margin="15,0,15,5" />
-                                <Entry 
-                        Grid.Column="1"
-                        x:Name="password"
-                        BackgroundColor="White"
-                        IsPassword="True"
-                        Placeholder="Password" />
-                                <Image Grid.Column="2" Source="facefingerrecognization.png" WidthRequest="24"/>
-                            </Grid>
-                        </Border>
+                <Label Margin="0,0,0,10" x:Name="userDisplay" HorizontalOptions="Center" FontAttributes="Bold" />
+                <Border Margin="10" HeightRequest="40" StrokeShape="RoundRectangle 10,10,10,10">
+                    <Grid ColumnDefinitions=".1*,.8*,.1*">
+                        <Image Grid.Column="0" Source="padlock.png" WidthRequest="13" Margin="15,0,15,5" />
+                        <Entry 
+                Grid.Column="1"
+                x:Name="password"
+                BackgroundColor="White"
+                IsPassword="True"
+                Placeholder="Password" />
+                        <Image Aspect="AspectFill" Grid.Column="2" Source="facefingerrecognization.png" WidthRequest="32" HeightRequest="27" Margin="-4,0,0,0"/>
+                    </Grid>
+                </Border>
                 <Button 
                 x:Name="btnLogin"
-                Margin="10"
+                Margin="10,25,10,0"
                 BackgroundColor="Green" 
                 FontAttributes="Bold" 
                 Clicked="btnLogin_Clicked"
                 Text="Log in"/>
+                <Grid Margin="12,30,12,0">
+                    <Label
+                        FontAttributes="Bold"
+                        TextColor="Green"
+                        Text="Forgot password?"/>
+                    <Label
+                        FontAttributes="Bold"
+                        HorizontalTextAlignment="End"
+                        TextColor="Green"
+                        Text="Not you?"/>
+                </Grid>
             </VerticalStackLayout>
         </Grid>
         <Grid Grid.Row="1" x:Name="usernameForm" IsVisible="True">
