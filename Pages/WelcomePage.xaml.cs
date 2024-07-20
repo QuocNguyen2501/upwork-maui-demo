@@ -10,6 +10,7 @@ public partial class WelcomePage : ContentPage
 	public WelcomePage()
 	{
 		InitializeComponent();
+        NavigationPage.SetHasNavigationBar(this, false);
         LoadBannerData();
         bannerCarousel.ItemsSource = Banners;
 	}
@@ -42,6 +43,6 @@ public partial class WelcomePage : ContentPage
 
     async void LoginBtn_Clicked(System.Object sender, System.EventArgs e)
     {
-        await Navigation.PushAsync(new LoginPage());
+        await Shell.Current.GoToAsync(nameof(LoginPage));
     }
 }

@@ -11,7 +11,6 @@ namespace UpworkDemo
         {
             base.OnCreate(savedInstanceState);
 
-            // Thay đổi màu sắc của StatusBar
             Window?.SetStatusBarColor(Android.Graphics.Color.White);
         }
     }

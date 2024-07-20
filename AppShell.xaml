@@ -7,9 +7,28 @@
     Shell.FlyoutBehavior="Disabled"
     Title="UpworkDemo">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:WelcomePage}"
-        Route="MainPage" />
+    <!-- Flyout Header -->
+    <FlyoutHeader>
+        <Grid Padding="10">
+            <Image Source="profile.jpg" WidthRequest="60" HeightRequest="60" />
+            <Label Text="Quoc Nguyen" FontSize="20" FontAttributes="Bold" />
+            <Label Text="Upwork Talent" FontSize="14" />
+        </Grid>
+    </FlyoutHeader>
+
+    <!-- Flyout Items -->
+    <FlyoutItem Title="Profile" Icon="profile_icon.png">
+        <ShellContent ContentTemplate="{DataTemplate local:ProfilePage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="My Stats" Icon="stats_icon.png">
+        <ShellContent ContentTemplate="{DataTemplate local:StatsPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Reports" Icon="reports_icon.png">
+        <ShellContent ContentTemplate="{DataTemplate local:ReportsPage}" />
+    </FlyoutItem>
+    <!-- Add more FlyoutItem as needed -->
+
+    <!-- Logout -->
+    <MenuItem Text="Log Out" Icon="logout_icon.png" Clicked="OnLogoutClicked" />
 
 </Shell>

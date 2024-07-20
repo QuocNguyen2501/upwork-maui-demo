@@ -8,9 +8,9 @@ namespace UpworkDemo
         {
             InitializeComponent();
 
-            Routing.RegisterRoute("dashboard", typeof(Dashboard));
-            Routing.RegisterRoute("login", typeof(LoginPage));
-
+            Routing.RegisterRoute(nameof(Dashboard), typeof(Dashboard));
+            Routing.RegisterRoute(nameof(WelcomePage), typeof(WelcomePage));
+            Routing.RegisterRoute(nameof(LoginPage), typeof(LoginPage));
         }
     }
 }

@@ -41,7 +41,7 @@
                         </DataTemplate>
                     </CarouselView.ItemTemplate>
                 </CarouselView>
-                <IndicatorView Margin="0,10,0,0" IndicatorColor="Gray" SelectedIndicatorColor="Green" HorizontalOptions="Center" x:Name="bannerIndicator"></IndicatorView>
+                <IndicatorView Margin="0,10,0,0" IndicatorColor="Gray" SelectedIndicatorColor="#297721" HorizontalOptions="Center" x:Name="bannerIndicator"></IndicatorView>
             </VerticalStackLayout>
         </Grid>
         <Grid 
@@ -50,7 +50,7 @@
             <VerticalStackLayout>
                 <Button WidthRequest="350" 
                         HeightRequest="50" 
-                        BackgroundColor="Green"
+                        BackgroundColor="#297721"
                         CornerRadius="50" 
                         FontAttributes="Bold"
                         Text="Log In"
@@ -60,7 +60,7 @@
                 <Label 
                     HorizontalOptions="Center" 
                     FontAttributes="Bold"
-                    TextColor="Green"
+                    TextColor="#297721"
                     Margin="0,20,0,0"
                     Text="New to Upwork? Sign Up"/>
             </VerticalStackLayout>

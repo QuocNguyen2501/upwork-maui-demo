@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using UpworkDemo.Pages;
 
 namespace UpworkDemo
 {
@@ -13,6 +14,7 @@ namespace UpworkDemo
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                    fonts.AddFont("Awesome-Regular.otf", "AwesomeRegular");
                 });
 
 #if DEBUG

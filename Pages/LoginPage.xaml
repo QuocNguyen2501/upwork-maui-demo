@@ -36,19 +36,19 @@
                 <Button 
                 x:Name="btnLogin"
                 Margin="10,25,10,0"
-                BackgroundColor="Green" 
+                BackgroundColor="#297721" 
                 FontAttributes="Bold" 
                 Clicked="btnLogin_Clicked"
                 Text="Log in"/>
                 <Grid Margin="12,30,12,0">
                     <Label
                         FontAttributes="Bold"
-                        TextColor="Green"
+                        TextColor="#297721"
                         Text="Forgot password?"/>
                     <Label
                         FontAttributes="Bold"
                         HorizontalTextAlignment="End"
-                        TextColor="Green"
+                        TextColor="#297721"
                         Text="Not you?"/>
                 </Grid>
             </VerticalStackLayout>
@@ -75,7 +75,7 @@
                     <Button 
                         x:Name="btnContinue"
                         Margin="10"
-                        BackgroundColor="Green" 
+                        BackgroundColor="#297721" 
                         FontAttributes="Bold" 
                         Clicked="btnContinue_Clicked"
                         Text="Continue"/>
