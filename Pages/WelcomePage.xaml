@@ -4,6 +4,7 @@
              x:Class="UpworkDemo.Pages.WelcomePage"
              Shell.NavBarIsVisible="False"
              Shell.BackgroundColor="White"
+             Shell.FlyoutBehavior="Disabled"
              Title="Welcome Page">
     <Grid RowDefinitions=".2*,.6*,.2*">
         <Image  Grid.Row="0"

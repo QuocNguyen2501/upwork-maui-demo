@@ -43,6 +43,6 @@ public partial class WelcomePage : ContentPage
 
     async void LoginBtn_Clicked(System.Object sender, System.EventArgs e)
     {
-        await Shell.Current.GoToAsync(nameof(LoginPage));
+        await Shell.Current.GoToAsync($"//{nameof(LoginPage)}");
     }
 }

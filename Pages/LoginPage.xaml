@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="UpworkDemo.Pages.LoginPage"
              Shell.NavBarIsVisible="False"
+             Shell.FlyoutBehavior="Disabled"
              Title="Login Page">
     <Grid RowDefinitions=".2*,.8*">
         <Image  Grid.Row="0"

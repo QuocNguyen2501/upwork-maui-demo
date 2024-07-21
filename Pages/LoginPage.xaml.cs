@@ -8,6 +8,8 @@ public partial class LoginPage : ContentPage
 	{
 		InitializeComponent();
         NavigationPage.SetHasNavigationBar(this, false);
+        username.Text = "nguyendangquoc.ndq@gmail.com";
+        password.Text = "123456";
     }
 
     private void btnContinue_Clicked(object sender, EventArgs e)
@@ -24,6 +26,6 @@ public partial class LoginPage : ContentPage
 
     private async void btnLogin_Clicked(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync("//Dashboard");
+        await Shell.Current.GoToAsync($"//{nameof(Dashboard)}");
     }
 }

@@ -14,68 +14,50 @@
         </ToolbarItem>
     </ContentPage.ToolbarItems>
     <Shell.TitleView>
-        <Grid 
-            Padding="5,0,10,0" 
-            BackgroundColor="White" 
-            HorizontalOptions="FillAndExpand"
-            HeightRequest="60">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-            <HorizontalStackLayout>
-                <Frame
-                    HeightRequest="30"
-                    WidthRequest="30"
-                    Padding="0"
-                    CornerRadius="70"
-                    IsClippedToBounds="True"
-                    VerticalOptions="Center">
-                            <Image
-                        WidthRequest="30"
-                        HeightRequest="30"
-                        HorizontalOptions="Center"
-                        VerticalOptions="Center"
-                        Aspect="AspectFit"
-                        Source="profile.jpeg"></Image>
-                        </Frame>
-                <Label
-                    FontSize="Medium"
-                    FontAttributes="Bold"
-                    VerticalOptions="Center"
-                    Margin="10,0,0,0"
-                    Text="Jobs" />
-            </HorizontalStackLayout>
-        </Grid>
+        <HorizontalStackLayout>
+            <Label
+                FontSize="Medium"
+                FontAttributes="Bold"
+                VerticalOptions="Center"
+                Margin="0"
+                Text="Jobs" />
+        </HorizontalStackLayout>
     </Shell.TitleView>
     <VerticalStackLayout>
-        <Border
-            Margin="1,0,1,0"
-            HeightRequest="100">
-            <Grid ColumnDefinitions=".9*,.3*">
-                <Border 
-                    Margin="20,0,0,0"
-                    StrokeShape="RoundRectangle 50,50,50,50"
-                    HeightRequest="50"
-                    >
-                    <SearchBar Grid.Column="0" x:Name="searchBar" Placeholder="Search for jobs"/>
-                </Border>
-                <Grid Grid.Column="1">
-                    <Button 
-                        WidthRequest="50" 
+        <VerticalStackLayout>
+            <Border
+                Margin="1,0,1,0"
+                HeightRequest="100">
+                <Grid ColumnDefinitions=".9*,.3*">
+                    <Border 
+                        Margin="20,0,0,0"
+                        StrokeShape="RoundRectangle 50,50,50,50"
                         HeightRequest="50"
-                        CornerRadius="30"
-                        BorderWidth="1"
-                        BackgroundColor="White"
-                        BorderColor="#297721"
-                        TextColor="#297721"
-                        FontAttributes="Bold"
-                        FontFamily="AwesomeRegular"
-                        FontSize="20"
-                        Text="&#xf004;"></Button>
+                        >
+                        <SearchBar Grid.Column="0" x:Name="searchBar" Placeholder="Search for jobs"/>
+                    </Border>
+                    <Grid Grid.Column="1">
+                        <Button 
+                            WidthRequest="50" 
+                            HeightRequest="50"
+                            CornerRadius="30"
+                            BorderWidth="1"
+                            BackgroundColor="White"
+                            BorderColor="#297721"
+                            TextColor="#297721"
+                            FontAttributes="Bold"
+                            FontFamily="AwesomeRegular"
+                            FontSize="20"
+                            Text="&#xf004;"></Button>
+                    </Grid>
                 </Grid>
-            </Grid>
-        </Border>
+            </Border>
+        </VerticalStackLayout>
+        <VerticalStackLayout>
+            <CollectionView>
+
+            </CollectionView>
+        </VerticalStackLayout>
     </VerticalStackLayout>
    
     

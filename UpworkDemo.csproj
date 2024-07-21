@@ -72,4 +72,20 @@
 	  </MauiXaml>
 	</ItemGroup>
 
+	<ItemGroup>
+	  <None Remove="Resources\Images\reports.png" />
+	  <None Remove="Resources\Images\requests.png" />
+	  <None Remove="Resources\Images\signout.png" />
+	  <None Remove="Enums\" />
+	  <None Remove="ViewModels\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <BundleResource Include="Resources\Images\reports.png" />
+	  <BundleResource Include="Resources\Images\requests.png" />
+	  <BundleResource Include="Resources\Images\signout.png" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Enums\" />
+	  <Folder Include="ViewModels\" />
+	</ItemGroup>
 </Project>

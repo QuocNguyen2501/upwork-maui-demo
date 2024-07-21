@@ -1,34 +1,116 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+﻿<?xml version="1.0" encoding="UTF-8" ?>
 <Shell
     x:Class="UpworkDemo.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:UpworkDemo.Pages"
-    Shell.FlyoutBehavior="Disabled"
+    Shell.FlyoutBehavior="Flyout"
     Title="UpworkDemo">
 
-    <!-- Flyout Header -->
-    <FlyoutHeader>
-        <Grid Padding="10">
-            <Image Source="profile.jpg" WidthRequest="60" HeightRequest="60" />
-            <Label Text="Quoc Nguyen" FontSize="20" FontAttributes="Bold" />
-            <Label Text="Upwork Talent" FontSize="14" />
-        </Grid>
-    </FlyoutHeader>
+    <Shell.FlyoutHeader>
+        <HorizontalStackLayout>
+            <Border
+                Margin="10,0,10,10"
+                StrokeShape="RoundRectangle 30"
+                Stroke="White">
+            <Image
+                Aspect="AspectFit"
+                WidthRequest="32"
+                HeightRequest="32"
+                Source="profile.jpeg"/>
+            </Border>
+            <VerticalStackLayout>
+                <Label
+                    FontSize="15"
+                    FontAttributes="Bold"
+                    Text="Quoc Nguyen" />
+                <Label
+                    FontSize="10"
+                    TextColor="Gray"
+                    Text="Upwork Talent" />
+            </VerticalStackLayout>
+        </HorizontalStackLayout>
+    </Shell.FlyoutHeader>
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid ColumnDefinitions=".30*, .70*" RowDefinitions="*,*,*,*,*,*,*">
+                <HorizontalStackLayout Margin="10,10,0,10" Grid.Row="0">
+                    <Image Margin="10,0,15,0" WidthRequest="20" Source="{Binding FlyoutIcon}" />
+                    <Label FontAttributes="Bold" Text="{Binding Title}" />
+                </HorizontalStackLayout>
+            </Grid>
+        </DataTemplate>
+    </Shell.ItemTemplate>
 
     <!-- Flyout Items -->
-    <FlyoutItem Title="Profile" Icon="profile_icon.png">
-        <ShellContent ContentTemplate="{DataTemplate local:ProfilePage}" />
+    <FlyoutItem Title="Profile" Icon="user.png">
+        <ShellContent ContentTemplate="{DataTemplate local:Dashboard}" />
     </FlyoutItem>
-    <FlyoutItem Title="My Stats" Icon="stats_icon.png">
-        <ShellContent ContentTemplate="{DataTemplate local:StatsPage}" />
+    <FlyoutItem Title="My Stats" Icon="stats.png">
+        <ShellContent ContentTemplate="{DataTemplate local:Dashboard}" />
     </FlyoutItem>
-    <FlyoutItem Title="Reports" Icon="reports_icon.png">
-        <ShellContent ContentTemplate="{DataTemplate local:ReportsPage}" />
+    <FlyoutItem Title="Reports" Icon="reports.png">
+        <ShellContent ContentTemplate="{DataTemplate local:Dashboard}" />
     </FlyoutItem>
-    <!-- Add more FlyoutItem as needed -->
+     <FlyoutItem Title="My requests" Icon="requests.png">
+        <ShellContent ContentTemplate="{DataTemplate local:Dashboard}" />
+    </FlyoutItem>
+     <FlyoutItem Title="Apps and Offers" Icon="apps.png">
+        <ShellContent ContentTemplate="{DataTemplate local:Dashboard}" />
+    </FlyoutItem>
+     <FlyoutItem Title="Settings" Icon="settings.png">
+        <ShellContent ContentTemplate="{DataTemplate local:Dashboard}" />
+    </FlyoutItem>
+     <FlyoutItem
+         Title="Help &amp; Support"
+         Icon="question.png">
+        <ShellContent ContentTemplate="{DataTemplate local:Dashboard}" />
+    </FlyoutItem>
 
-    <!-- Logout -->
-    <MenuItem Text="Log Out" Icon="logout_icon.png" Clicked="OnLogoutClicked" />
+    <ShellContent
+        Route="Dashboard"
+        ContentTemplate="{DataTemplate local:Dashboard}"
+      />
+
+    <ShellContent
+        Route="WelcomePage"
+        ContentTemplate="{DataTemplate local:WelcomePage}"
+      />
+    <ShellContent
+        Route="LoginPage"
+        ContentTemplate="{DataTemplate local:LoginPage}"
+      />
+
+     <!-- Add more FlyoutItem as needed -->
+    <Shell.FlyoutFooter>
+       <VerticalStackLayout>
+           <Frame
+               Margin="0,0,0,20"
+               WidthRequest="110"
+               Padding="0"
+               BorderColor="White">
+               <HorizontalStackLayout>
+                   <Image
+                       Margin="0,0,10,0"
+                       WidthRequest="25"
+                       HeightRequest="25"
+                       Source="signout.png" />
+                   <Label
+                       Margin="0,2,0,0"
+                       HorizontalOptions="Center"
+                       FontAttributes="Bold"
+                       TextColor="#297721"
+                       Text="Log Out" />
+                </HorizontalStackLayout>
+            </Frame>
+           <Label
+               HorizontalOptions="Center"
+               Margin="0,0,0,20"
+               FontAttributes="Bold"
+               TextColor="Gray"
+               Text="Version 1.63.0 (1013)" />
+       </VerticalStackLayout>
+    </Shell.FlyoutFooter>
+
 
 </Shell>

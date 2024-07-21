@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using CommunityToolkit.Maui;
+using Microsoft.Extensions.Logging;
 using UpworkDemo.Pages;
 
 namespace UpworkDemo
@@ -10,6 +11,7 @@ namespace UpworkDemo
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                .UseMauiCommunityToolkit()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -17,8 +19,12 @@ namespace UpworkDemo
                     fonts.AddFont("Awesome-Regular.otf", "AwesomeRegular");
                 });
 
+            builder.Services.AddSingleton<WelcomePage>();
+            builder.Services.AddSingleton<LoginPage>();
+            builder.Services.AddSingleton<Dashboard>();
+
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
             return builder.Build();
         }

@@ -1,4 +1,6 @@
-﻿namespace UpworkDemo
+﻿using UpworkDemo.Pages;
+
+namespace UpworkDemo
 {
     public partial class App : Application
     {

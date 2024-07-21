@@ -11,7 +11,14 @@ public partial class Dashboard : ContentPage
 
 		if (string.IsNullOrEmpty(UserService.getUser().Username))
 		{
-			Shell.Current.GoToAsync("//WelcomePage").Wait();
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                Shell.Current.GoToAsync($"//{nameof(WelcomePage)}");
+            });
+		}
+		else
+		{
+            Shell.Current.FlyoutIcon = "profile.jpeg";
         }
     }
 

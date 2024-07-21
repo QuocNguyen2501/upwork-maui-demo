@@ -1,4 +1,5 @@
 ﻿using UpworkDemo.Pages;
+using UpworkDemo.Services;
 
 namespace UpworkDemo
 {
@@ -7,10 +8,6 @@ namespace UpworkDemo
         public AppShell()
         {
             InitializeComponent();
-
-            Routing.RegisterRoute(nameof(Dashboard), typeof(Dashboard));
-            Routing.RegisterRoute(nameof(WelcomePage), typeof(WelcomePage));
-            Routing.RegisterRoute(nameof(LoginPage), typeof(LoginPage));
         }
     }
 }
